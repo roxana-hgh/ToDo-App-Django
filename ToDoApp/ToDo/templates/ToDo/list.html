@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'ToDo/app-style.css' %}">
+    <title>To do App</title>
+</head>
+<body>
+    <header>
+        <div class="logo">ToDO</div>
+        <div class="right">
+            <h2>hello, {{request.user}}</h2> <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </header>
+        
+    <div class="container">
+
+    <h1 class="date">{{date}}</h1>
+    <form action="" method="POST" class="form-group">
+        {% csrf_token %}
+        {{form.title}}
+        <button type="submit" class="btn add">Add New Task</button>
+    </form>  
+    <div class="list">
+        {% for task in tasks %}
+        <div class="list-item">
+            {% if task.checked %}
+            <h3><del>{{task.title}}</del></h3>
+            {% else %}
+            <h3>{{task.title}}</h3>
+            {% endif %}
+            <div class="list-edit">
+                <a href="{% url 'update_task' task.id %}" class="update">Edit</a>
+                <a href="{% url 'delete_task' task.id %}" class="delete" >delete</a>
+            </div> 
+        </div>
+    {% endfor %}
+    </div>
+
+</body>
+
+<script>
+    let form_fields = document.getElementsByTagName('input');
+    for(var field in form_fields){
+        form_fields[field].className += 'form-field'
+    }
+</script>
+</html>
+

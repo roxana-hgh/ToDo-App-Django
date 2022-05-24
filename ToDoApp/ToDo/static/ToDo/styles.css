@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* landing page */
+
+header {
+    display: flex;
+    padding: 0.3em 2em ;
+    justify-content: space-between; 
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-style: normal;
+    color: #671874;
+}
+
+.login {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #812391;
+    text-decoration: none;
+    margin-right: .3em;
+
+}
+
+.singup-btn {
+    width: 6em;
+    height: 2em;
+    background: #b044c0;
+    border: 1px solid #8c38a5;
+    border-radius: 65px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    margin-top: 0.3em;
+}
+
+.fa-bars {
+    display: none;
+}
+
+.hamberger-menu{
+    display: none;
+}
+
+.heading {
+    width: 100%;
+    background-color: #FEFAFF;
+    height: 25em;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.heading-img {
+    background-image: url(./images/reading-list-concept-illustration_114360-1005.jpg);
+    width: 50%;
+    height: 25em;
+    background-repeat: no-repeat;
+    
+}
+
+.title {
+    width: 40%;
+
+    padding: 3% 8%;
+}
+.title p {
+    font-weight: 900;
+    font-size: 3.5rem;
+    text-align: center;
+    color: #44044F;
+}
+
+
+.context {
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text p {
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #616161;
+}
+
+.getstart-btn {
+    width: 12em;
+    height: 3em;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    background: #901FA3;
+    border-radius: 46px;
+    cursor: pointer;
+    border: 1px solid #511563;
+}
+
+.app-img {
+    background-image: url('./images/App.png');
+    background-position: center;
+    background-size: cover;
+    width: 40%;
+    height: 25em;
+    margin-right: 10%;
+    border-radius: 32px;
+    opacity: 0.85;
+}
+a {
+    width: auto;
+}
+
+footer {
+    padding: 0.5em ;
+    margin-top: 2em;
+    width: 100%;
+    background: #FEFAFF;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .logo {
+    font-weight: 900;
+    font-size: 2rem;
+    color: #5B1566;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 3%;
+
+}
+
+.social {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0 auto;
+}
+
+
+.left-footer {
+    margin-left: 2em;
+    font-size: 0.8rem;
+}
+
+footer .getstart-btn {
+    width: 13em;
+    height: 3em;
+    margin: 2% auto;
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    background: #701880;
+    cursor: pointer;
+}
+
+.getstart-btn:hover, .singup-btn:hover {
+    opacity: 0.8
+}
+
+.login:hover {
+    text-decoration: underline;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* 
+---------------------------------------------------------------------------------------------
+*/
+
+@media screen and (max-width: 860px){
+  
+    header {
+        width: 100%;
+        padding: 1% 1.5%;
+    }
+
+    .logo {
+        font-weight: 900;
+        font-size: 1.6rem;
+    }
+
+    .login, .singup-btn {
+        display: none;
+    }
+    
+    .fa-bars{
+        display: block;
+        font-size: 2rem;
+        color: #5B1566;
+        position: absolute;
+        right: 5%;
+
+    }
+
+    .fa-bars:hover{
+        color: #9a40b6;
+    }
+    
+    .hamberger-menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .hamberger-menu.show{
+        background: #FEFAFF;
+        position: absolute;
+        display: flex;
+        z-index: 3;
+        width: 100%;
+        height: 5rem;
+        margin-top: 3rem;
+        padding: 0;
+    }
+
+    .ham-item{
+        text-decoration: none;
+        padding: .5rem;
+        color: #9a40b6;
+        font-weight: 900;
+        font-size: 20px;
+    }
+
+    .ham-item:hover {
+        text-decoration: underline;
+        color: #6b2381;
+    }
+
+
+    .heading {
+        width: 100%;
+        background-color: #FEFAFF;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    
+    .heading-img {
+        background-image: url(./images/reading-list-concept-illustration_114360-1005.jpg);
+        width: 100%;
+        background-size: cover;
+        
+    }
+    
+    .title {
+        width: 100%;
+        padding: 0;
+    }
+    .title p {
+        font-weight: 900;
+        font-size: 2.4rem;
+        text-align: center;
+        color: #44044F;
+        padding: 0;
+    }
+
+    .context {
+        flex-direction: column;
+    }
+
+    .app-img {
+        width: 100%;
+        height: 20em;
+        margin: 3% auto;
+        border-radius: 10px;
+        opacity: 0.85;
+    }
+    .text {
+        width: 70%;
+        height: 12em;
+        margin: 3% auto;
+    }
+    
+    .text p {
+        font-weight: 900;
+        font-size: 1.2rem;
+        text-align: center;
+        color: #616161;
+    }
+    
+    .getstart-btn {
+        width: 12em;
+        height: 3em;
+        color: white;
+        font-size: 1rem;
+        font-weight: 400;
+        background: #901FA3;
+        border-radius: 46px;
+        cursor: pointer;
+        border: 1px solid #511563;
+    }
+    
+    footer {
+        flex-direction: column;
+    }
+
+    .left-footer{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .icons {
+        width: 100%;
+    }
+
+}
+
+

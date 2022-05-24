@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'ToDo/app-style.css' %}">
+    <title>To do App</title>
+</head>
+<body>
+    <div class="container bg">
+    <h2 class="confirmation">Are you sure you want to delete <span class="taskname">{{item}}</span>?</h2>
+    <div class="btns">
+        <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Confirm" class="btn confirm">
+        </form>
+        <a href="{% url 'tasks' %}" ><button class="btn cancel">cancel</button></a>
+    </div>
+</div>
+</body>
+</html>

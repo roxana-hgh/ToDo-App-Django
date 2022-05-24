@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'ToDo/app-style.css' %}">
+    <title>To do App</title>
+</head>
+<body>
+    <div class="container bg">
+        <h2 class="task">{{item}}</h2>
+        <form action="" method="POST" class="update-form">
+            {% csrf_token %}
+            {{form.title}}
+            <div class="check">{{form.checked}} <h4>Done</h4></div>
+             
+            <input type="submit" value="Update" class="btn add">
+        </form>
+    </div>
+    
+</body>
+
+<script>
+    let form_fields = document.getElementsByTagName('input');
+    form_fields[1].placeholder = 'title';
+    form_fields[1].className += 'form-field'
+    form_fields[2].className += 'check-box'
+    
+</script>
+</html>
