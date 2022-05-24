@@ -1,0 +1,45 @@
+{% extends "users/index.html" %}
+
+
+{% block content %}
+
+<p>Join us Today</p>
+<form action="" method="POST">
+    {% csrf_token %}
+  
+    <div class="form-group">
+        {{form.username}}
+        {{form.email}}
+        {{form.password1}}
+        {{form.password2}}
+
+        <div class="errors">
+            {{form.errors}}
+        </div>
+            
+        <button type="submit">Sign Up</button>
+
+    </div>
+    
+</form>
+<small>Already Have an account? <a href="{% url 'login' %}">Log in</a></small>
+
+{% endblock %}
+
+
+
+{% block script %}
+<script>
+    let form_fields = document.getElementsByTagName('input');
+    form_fields[1].placeholder = 'Username';
+    form_fields[2].placeholder = 'Email';
+    form_fields[3].placeholder = 'password';
+    form_fields[4].placeholder = 'Confrim password';
+
+    for(var field in form_fields){
+        form_fields[field].className += 'form-field'
+    }
+    
+</script>
+{% endblock %}
+
